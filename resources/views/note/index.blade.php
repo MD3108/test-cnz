@@ -22,12 +22,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-12">   
                     <div class="grid --notes">
                         @foreach ($notes as $note)
                         <div class="grid-item">
-                            
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
@@ -112,7 +111,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         @endforeach
                     </div>

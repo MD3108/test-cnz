@@ -1,19 +1,22 @@
 // Body
-//$body-bg: #f8fafc;
-
+$body-bg: $blue;
+$text-color: $dark-blue;
 // Typography
-//$font-family-sans-serif: 'Nunito', sans-serif;
-//$font-size-base: 0.9rem;
-//$line-height-base: 1.6;
+$font-family-sans-serif: 'Saira', sans-serif;
+$font-size-base: 1.125rem;
+$line-height-base: 1.388;
+$font-weight-bold: 700;
 
 // Colors
-//$blue: #3490dc;
-//$indigo: #6574cd;
-//$purple: #9561e2;
-//$pink: #f66d9b;
-//$red: #e3342f;
-//$orange: #f6993f;
-//$yellow: #ffed4a;
-//$green: #38c172;
-//$teal: #4dc0b5;
-//$cyan: #6cb2eb;
+$cta : $orange;
+
+//**Border**//
+$border-color: transparent;
+$border-radius: 0.222rem;
+$border-radius-lg: 0.222rem;
+$border-radius-sm: 0.222rem;
+
+//**Box shadow**//
+$box-shadow-sm: 0 0.333rem 0.444rem rgba($dark-blue, .1);
+$box-shadow: 0 0.333rem 0.444rem rgba($dark-blue, .1);
+$box-shadow-lg: 0 0.333rem 0.444rem rgba($dark-blue, .1);
