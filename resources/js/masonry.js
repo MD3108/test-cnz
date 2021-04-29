@@ -6,13 +6,13 @@ var msnry = new Masonry( grid, {
   gutter: 20,
 });
 
-//let elem = document.querySelector('.container');
-//let infScroll = new InfiniteScroll( elem, {
-//  // options
-//  path: '?note=@{{#}}',
-//  append: '.grid-item',
-//  outlayer: msnry,
-//  status: '.page-load-status'
-
-//  //history: false,
-//});
+let elem = document.querySelector('.grid' + '.--notes');
+console.log( elem );
+let infScroll = new InfiniteScroll( elem, {
+  // options
+  path: '?note={{#}}',
+  append: '.grid-item',
+  outlayer: msnry,
+  status: '.page-load-status'
+  //history: false,
+});

@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-12">   
-                    <div class="grid">
+                    <div class="grid --notes">
                         @foreach ($notes as $note)
                         <div class="grid-item">
                             
