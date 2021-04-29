@@ -1,4 +1,14 @@
 //https://codepen.io/desandro/pen/owWLYz
+//animation for the page loader
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(1.5em) }
+}
+
 .loader-ellips {
 
     font-size: 20px; /* change size here */
@@ -45,13 +55,4 @@
       
 }
 
-//animation for the page loader
-@keyframes reveal {
-  from { transform: scale(0.001); }
-  to { transform: scale(1); }
-}
-
-@keyframes slide {
-  to { transform: translateX(1.5em) }
-}
 

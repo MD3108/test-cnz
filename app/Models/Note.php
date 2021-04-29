@@ -9,6 +9,8 @@ class Note extends Model
 {
     protected $fillable = ['fighter', 'name', 'notation', 'damage', 'ki_start', 'ki_end', 'user_id'];
 
+    protected $guarded = [];
+
     use HasFactory;
 
     public function user(){

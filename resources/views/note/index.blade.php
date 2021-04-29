@@ -28,7 +28,7 @@
                         @foreach ($notes as $note)
                         <div class="grid-item">
                             
-                            <div class="card mb-3">
+                            <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div>

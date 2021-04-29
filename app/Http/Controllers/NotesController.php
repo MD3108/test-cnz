@@ -19,15 +19,12 @@ class NotesController extends Controller
      */
     public function index()
     {
-
-        $notes = Note::paginate(9);
-        $order = Note::orderBy('updated_at', 'DESC');
-
+        $notes = Note::orderBy('updated_at', 'DESC')->paginate(12);
+        
         abort_if($notes->isEmpty(), 204);
-
+        
         return view('note.index', [
             'notes' => $notes,
-            "order" => $order,
         ]);
         //return view('note.index')
         //    ->with('notes', Note::orderBy('updated_at', 'DESC')->get());
