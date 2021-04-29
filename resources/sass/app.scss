@@ -1,8 +1,19 @@
-// Fonts
+// * Fonts * //
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
-// Bootstrap
+// * Bootstrap * //
 @import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/button';
+@import 'bootstrap/card';
+@import 'bootstrap/nav';
+@import 'bootstrap/progressbar';
+
+// * Variables * //
+@import 'utils/variables';
+
+// * Components * //
+@import 'components/layout';
+@import 'components/animation';
+@import 'components/form';
+@import 'components/list';
+@import 'components/type';
