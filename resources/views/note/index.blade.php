@@ -96,6 +96,13 @@
                                                     {{ date("m / d / y", strtotime($note->created_at)) }}
                                                 </span>
                                             </div>
+                                                <div>
+                                                    @foreach ($note->likes as $key=>$like)
+                                                    @if ($loop->last)
+                                                        <div>{{ $loop->count }} likes</div>
+                                                    @endif
+                                                    @endforeach 
+                                                </div>
                                             @if (isset(Auth::user()->id) && Auth::user()->id == $note->user_id)
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="pr-4">

@@ -24,4 +24,8 @@ class Note extends Model
     public function categories(){
         return $this->belongsToMany(Category::class);
     }
+
+    public function likes() {
+        return $this->belongsToMany(Like::class);
+    }
 }

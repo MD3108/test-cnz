@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             FighterNoteSeeder::class,
             CategorySeeder::class,
             CategoryNoteSeeder::class,
+            LikeSeeder::class,
+            LikeNoteSeeder::class,
         ]);
     }
 }
