@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\FighterNote;
+use App\Models\CategoryNote;
 use Illuminate\Database\Seeder;
 
-class FighterNoteSeeder extends Seeder
+class CategoryNoteSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,9 @@ class FighterNoteSeeder extends Seeder
      */
     public function run()
     {
-        FighterNote::create([
-            'fighter_id' => 1,
-            'note_id' => 1,
+        CategoryNote::create([
+            'category_id' => '2',
+            'note_id' => '1',
         ]);
     }
 }

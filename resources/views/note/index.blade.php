@@ -31,9 +31,21 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <img src="{{ $note->fighter_img }}" alt="{{ $note->fighter_name }}">
+                                            @foreach ($note->fighters as $fighter)
+                                                <img src="{{ URL('' . $fighter->image_path ) }}" alt="{{ $fighter->image_path }}">
+                                                    
+                                                
+                                            @endforeach
+                                            
                                         </div>
                                         <div>
+                                            <div>
+                                                @foreach ($note->categories as $category)
+                                                    <span>
+                                                        {{ $category->name }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
                                             <div class="text-right">
                                                 <span>
                                                     {{ $note->damage }}

@@ -11,4 +11,7 @@ class Fighter extends Model
 
     public $timestamps = false;
     
+    public function notes() {
+        return $this->belongsToMany(Note::class);
+    }
 }

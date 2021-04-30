@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fighter;
 use Illuminate\Http\Request;
 use App\Models\Note;
 
@@ -20,11 +21,14 @@ class NotesController extends Controller
     public function index()
     {
         $notes = Note::orderBy('updated_at', 'DESC')->paginate(12);
+        //dd($notes);
+        //$fighters = Fighter::all();
         
         abort_if($notes->isEmpty(), 204);
         
         return view('note.index', [
             'notes' => $notes,
+            //'fighter' => $fighters,
         ]);
         //return view('note.index')
         //    ->with('notes', Note::orderBy('updated_at', 'DESC')->get());

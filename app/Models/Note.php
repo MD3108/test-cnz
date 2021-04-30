@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    protected $fillable = ['fighter', 'name', 'notation', 'damage', 'ki_start', 'ki_end', 'user_id'];
+    protected $fillable = ['name', 'notation', 'damage', 'ki_start', 'ki_end', 'user_id'];
 
     protected $guarded = [];
 
@@ -17,7 +17,11 @@ class Note extends Model
         return $this->belongsTo(User::class);
     }
 
-    //public function fighter(){
-    //    return $this->belongsTo(Fighter::class);
-    //}
+    public function fighters(){
+        return $this->belongsToMany(Fighter::class);
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
 }

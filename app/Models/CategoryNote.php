@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FighterNote extends Model
+class CategoryNote extends Model
 {
     use HasFactory;
-    protected $table = 'fighter_note';
+    protected $table = 'category_note';
     public $timestamps = false;
 }

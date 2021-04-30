@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FighterNote extends Model
+class Category extends Model
 {
     use HasFactory;
-    protected $table = 'fighter_note';
+
     public $timestamps = false;
+
+    public function notes() {
+        return $this->belongsToMany(Note::class);
+    }
 }
