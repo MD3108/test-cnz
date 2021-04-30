@@ -13,6 +13,6 @@ let infScroll = new InfiniteScroll( elem, {
   path: '?page={{#}}',
   append: '.grid-item',
   outlayer: msnry,
-  status: '.page-load-status'
-  //history: false,
+  status: '.page-load-status',
+  history: false,
 });
