@@ -10010,6 +10010,15 @@ body {
   background-color: #EBF6FF;
 }
 
+.section {
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
+}
+.section.--dark {
+  background-color: #061C2D;
+  color: #EBF6FF;
+}
+
 @-webkit-keyframes reveal {
   from {
     transform: scale(0.001);
@@ -10091,4 +10100,25 @@ body {
 body {
   color: #061C2D;
   font-family: "Saira", sans-serif;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3.0625rem;
+  margin-bottom: 1.875rem;
+}
+.title.--has-sub {
+  margin-bottom: inherit;
+}
+.title.--main {
+  font-size: 3.8125rem;
+  margin-bottom: 4.375rem;
+}
+.title.--h3 {
+  font-size: 2rem;
+}
+.title.--sub {
+  display: block;
+  font-weight: 400;
+  font-size: 1.5625rem;
 }

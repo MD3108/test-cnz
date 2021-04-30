@@ -2,3 +2,24 @@ body{
     color: $text-color;
     font-family: $font-family-sans-serif;
 }
+
+.title{
+    font-weight: $font-weight-bold;
+    font-size: $font-size-title-h2;
+    margin-bottom: $m-h2;
+    &.--has-sub{
+        margin-bottom: inherit;
+    }
+    &.--main{
+        font-size: $font-size-title-h1;
+        margin-bottom: $m-section;
+    }
+    &.--h3{
+        font-size: $font-size-title-h3;
+    }
+    &.--sub{
+        display: block;
+        font-weight: $font-weight-base;
+        font-size: $font-size-title-sub;
+    }
+}
