@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFightersTable extends Migration
+class CreateFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateFightersTable extends Migration
      */
     public function up()
     {
-        Schema::create('fighters', function (Blueprint $table) {
+        Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 45);
-            $table->string('image_path');
-            $table->enum('assist', ['A', 'B', 'C']);
+            $table->bigInteger('user_id');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ class CreateFightersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fighters');
+        Schema::dropIfExists('favorites');
     }
 }

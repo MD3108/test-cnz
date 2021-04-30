@@ -44,4 +44,12 @@ class User extends Authenticatable
     public function note(){
         return $this->hasMany(Note::class);
     }
+
+    public function likes(){
+        return $this->belongsToMany(Like::class);
+    }
+
+    public function favorites(){
+        return $this->belongsToMany(User::class);
+    }
 }
