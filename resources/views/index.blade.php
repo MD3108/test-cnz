@@ -31,9 +31,9 @@
                             Get all the latest and diverse Combos from the Dragon Ball FighterZ community in one place.
                         </h2>
                         <p>
-                            As a fellow DBFZ player, there is no better place to learn and discover new combos. A filter feature allows finding all combos you need with ease. Learn all the combos you need in no time and watch yourself Surpass your limits !!!
+                            As a fellow DBFZ player there is no better place to learn and discorver new combos. A filter feature allows to find all combos you need with ease. Learn all the combos you need in no time and watch yourself surpass your limits !!!
                         </p>
-                        <a href="{{ url('/') }}" role="button" class="btn btn-primary btn-lg">Go to Main page</a>
+                        <a href="{{ url('/') }}" role="button" class="btn btn-primary btn-lg">Discorver now</a>
                     </div>
                     <div>
                         <!--<img src="{{ URL('/storage/gif/ssj-goku-llmmhhh.gif') }}" alt="goku auto combo gif"> -->

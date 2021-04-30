@@ -31,9 +31,7 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <span>
-                                                {{ $note->fighter }}
-                                            </span>
+                                            <img src="{{ $note->fighter_img }}" alt="{{ $note->fighter_name }}">
                                         </div>
                                         <div>
                                             <div class="text-right">

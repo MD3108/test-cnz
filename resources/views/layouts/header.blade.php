@@ -37,6 +37,11 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
+                    <li class="nav-item">
+                        <a class="btn btn-primary nav-link text-uppercase" href="/note/login">
+                            Create Note
+                        </a>
+                    </li>
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -56,7 +61,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary nav-link text-uppercase text-light" href="/note/create">
+                        <a class="btn btn-primary nav-link text-uppercase" href="/note/create">
                             Create Note
                         </a>
                     </li>
