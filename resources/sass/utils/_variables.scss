@@ -16,6 +16,9 @@ $font-size-title-sub: 1.5625rem;
 //paddings and margins
 $m-section: 4.375rem;
 $p-section: 4.375rem;
+$ml-assist-note: 0.625rem;
+$mr-fighter-note: 0.625rem;
+$mb-fighter-note: 2.5rem;
 
 $m-h2: 1.875rem;
 
@@ -24,8 +27,8 @@ $cta : $orange;
 
 //**Border**//
 $border-color: transparent;
-$border-radius: 0.222rem;
-$border-radius-lg: 0.222rem;
+$border-radius:    .4rem !default;
+$border-radius-lg: .4rem !default;
 $border-radius-sm: 0.222rem;
 
 //**Box shadow**//

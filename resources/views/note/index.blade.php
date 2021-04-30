@@ -30,16 +30,28 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
-                                        <div>
+                                        <div class="d-flex ">
                                             @foreach ($note->fighters as $fighter)
-                                                <img src="{{ URL('' . $fighter->image_path ) }}" alt="{{ $fighter->image_path }}">
-                                                    
-                                                
+                                                @if ($loop->first)
+                                                <img class="fighter --note" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                <div>
+                                                @elseif($loop->index == 1)
+                                                    <div>
+                                                        <img class="fighter --a1" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                        <span class="assist">{{ $fighter->assist }}</span>                                                    
+                                                    </div>
+
+                                                @elseif($loop->index == 2)
+                                                    <div>
+                                                        <img class="fighter --a2" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                        <span class="assist">{{ $fighter->assist }}</span>
+                                                    </div>
+                                                @endif    
                                             @endforeach
-                                            
+                                                </div>
                                         </div>
-                                        <div>
-                                            <div>
+                                        <div class="details">
+                                            <div class="categories">
                                                 @foreach ($note->categories as $category)
                                                     <span>
                                                         {{ $category->name }}
@@ -79,12 +91,16 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h2 class="card-title">
-                                            {{ $note->name }}
-                                        </h2>
-                                        <p class="card-text">
+                                        <div>
+                                            <h2 class="card-title">
+                                                {{ $note->name }}
+                                            </h2>
+                                            <button class="btn --play">Play preview</button>
+                                        </div>
+                                        
+                                        <div class="notation">
                                             {{ $note->notation }}
-                                        </p>
+                                        </div>
                                     </div>
                                     <div class="pt-4">
                                         <div class="d-flex justify-content-between">

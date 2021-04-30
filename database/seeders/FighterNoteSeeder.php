@@ -18,5 +18,13 @@ class FighterNoteSeeder extends Seeder
             'fighter_id' => 1,
             'note_id' => 1,
         ]);
+        FighterNote::create([
+            'fighter_id' => 2,
+            'note_id' => 1,
+        ]);
+        FighterNote::create([
+            'fighter_id' => 3,
+            'note_id' => 1,
+        ]);
     }
 }
