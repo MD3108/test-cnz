@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div>
+                                        <div class="d-flex">
                                             <h2 class="card-title">
                                                 {{ $note->name }}
                                             </h2>
@@ -144,7 +144,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card --vod">
+                                <div class="card-body --vod">
+                                    <iframe 
+                                        class="vod"
+                                        src="{{ url($note->youtube_url) }}" 
+                                        title="YouTube video player" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen
+                                    ></iframe>
+                                    <button class="btn-close" aria-label="Close" ></button>
+                                </div>
+                            </div>
                         </div>
+
                         @endforeach
                     </div>
                     <div class="page-load-status">
@@ -167,4 +181,5 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
     <script src="{{ URL('/js/masonry.js') }}"></script>
+    <!--<script src="{{ URL('/js/vod.js') }}"></script>-->
 @endsection

@@ -33,7 +33,8 @@ class NoteSeeder extends Seeder
             'ki_start' => 0,
             'ki_end' => 0.5,
             'difficulty' => 'easy',
-            'youtube_url' => 'https://youtu.be/IK68AZ87mRU',
+            //placeholder https://www.youtube.com/embed/
+            'youtube_url' => 'https://www.youtube.com/embed/IK68AZ87mRU',
 
             //-- User --//
             'user_id' => 1,
