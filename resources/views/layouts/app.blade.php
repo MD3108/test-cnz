@@ -34,7 +34,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    
+    @include('layouts.sprite')
     <div id="app">
         
         <header>

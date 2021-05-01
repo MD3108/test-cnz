@@ -6,21 +6,3 @@
         color: $blue;
     }
 }
-
-.fighter{
-    border: 1px solid $dark-blue;
-    border-radius: $border-radius;
-    background-color: $blue;
-    &.--note{
-        width: 90px;
-        margin-right: $mr-fighter-note;
-        margin-bottom: $mb-fighter-note;
-    }
-    &.--a1{
-        width: 40px;
-        margin-bottom: $ml-assist-note;
-    }
-    &.--a2{
-        width: 40px;
-    }
-}

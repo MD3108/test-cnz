@@ -3,8 +3,31 @@
     border: 0px solid $border-color;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-    &-title{
-        //font-weight: $font-weight-bold;
+    &-body{
+        &__header{
+            .cb-header__fighter{
+                .fighter{
+                    border: 1px solid $dark-blue;
+                    border-radius: $border-radius;
+                    background-color: $blue;
+                    &.--main{
+                        width: 90px;
+                        margin-right: $mr-fighter-note;
+                        margin-bottom: $mb-fighter-note;
+                    }
+                    &.--a1{
+                        width: 40px;
+                        margin-bottom: $ml-assist-note;
+                    }
+                    &.--a2{
+                        width: 40px;
+                    }
+                }
+            }
+        }
+        &.--vod{
+            position: relative;
+        }
     }
     &.--vod{
         position: absolute;
@@ -15,8 +38,12 @@
         .vod{
             display: block;
             width: 100%;
-            min-height: 266.45px;
+            min-height: 100%;
         }
+    }
+    &-body.--vod{
+        position: relative;
+        
     }
     &.hide{
         visibility: hidden;

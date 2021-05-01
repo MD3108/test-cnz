@@ -29,36 +29,38 @@
                         <div class="grid-item">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex ">
+                                    <div class="card-body__header d-flex justify-content-between">
+                                        <div class="cb-header__fighter d-flex ">
                                             @foreach ($note->fighters as $fighter)
-                                                @if ($loop->first)
-                                                <img class="fighter --note" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
-                                                <div>
+                                            @if ($loop->first)
+                                            <img class="fighter --main" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                            <div>
                                                 @elseif($loop->index == 1)
-                                                    <div>
-                                                        <img class="fighter --a1" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
-                                                        <span class="assist">{{ $fighter->assist }}</span>                                                    
-                                                    </div>
+                                                <div>
+                                                    <img class="fighter --a1" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                    <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
+                                                    <span class="assist">{{ $fighter->assist }}</span>                                                    
+                                                </div>
 
                                                 @elseif($loop->index == 2)
                                                     <div>
                                                         <img class="fighter --a2" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                        <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
                                                         <span class="assist">{{ $fighter->assist }}</span>
                                                     </div>
                                                 @endif    
-                                            @endforeach
-                                                </div>
+                                                @endforeach
+                                            </div><!--cb-header__fighter End-->
                                         </div>
-                                        <div class="details">
-                                            <div class="categories">
+                                        <div class="cb-header__details">
+                                            <div class="details__categories">
                                                 @foreach ($note->categories as $category)
                                                     <span>
                                                         {{ $category->name }}
                                                     </span>
                                                 @endforeach
                                             </div>
-                                            <div class="text-right">
+                                            <div class="details__damage text-right">
                                                 <span>
                                                     {{ $note->damage }}
                                                 </span>
@@ -67,8 +69,8 @@
                                                 </span>
                                             </div>
                                             
-                                            <div class="d-flex">
-                                                <div>
+                                            <div class="details__ki d-flex">
+                                                <div class="ki__start">
                                                     <span>
                                                         {{ $note->ki_start }}
                                                     </span>
@@ -79,7 +81,7 @@
                                                 <span>
                                                     &nbsp;-&nbsp;
                                                 </span>
-                                                <div>
+                                                <div class="ki__end">
                                                     <span>
                                                         {{ $note->ki_end }}
                                                     </span>
@@ -88,45 +90,51 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div><!-- cb-header__details End -->
                                     </div>
-                                    <div>
-                                        <div class="d-flex">
-                                            <h2 class="card-title">
+                                    <div class="card-body__combo">
+                                        <div class="cb-combo d-flex justify-content-between">
+                                            <h2 class="cb-combo__name card-title">
                                                 {{ $note->name }}
                                             </h2>
-                                            <button class="btn --play">Play preview</button>
+                                            <button class="cb-combo__btn --vod btn ">
+                                                <svg class="icon icon-play">
+                                                    <use xlink:href="#icon-play"></use>
+                                                </svg>
+                                            </button>
                                         </div>
                                         
-                                        <div class="notation">
+                                        <div class="cb-combo__notation">
                                             {{ $note->notation }}
                                         </div>
-                                    </div>
-                                    <div class="pt-4">
+                                    </div><!-- card-body__combo End -->
+                                    <div class="card-body__footer pt-4">
                                         <div class="d-flex justify-content-between">
-                                            <div class="">
-                                                <span>
+                                            <div class="cb-footer__user-date">
+                                                <span class="ud__username">
                                                     {{ $note->user->name }}
                                                 </span>
-                                                <span>
+                                                <span class="ud__date">
                                                     {{ date("m / d / y", strtotime($note->created_at)) }}
                                                 </span>
                                             </div>
-                                                <div>
-                                                    @foreach ($note->likes as $key=>$like)
+                                            <div class="cb-footer__likes">
+                                                @foreach ($note->likes as $key=>$like)
                                                     @if ($loop->last)
-                                                        <div>{{ $loop->count }} likes</div>
+                                                        <div class="likes__count">
+                                                            {{ $loop->count }} likes
+                                                        </div>
                                                     @endif
-                                                    @endforeach 
-                                                </div>
+                                                @endforeach 
+                                            </div>
                                             @if (isset(Auth::user()->id) && Auth::user()->id == $note->user_id)
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div class="pr-4">
+                                                <div class="cb-footer__update d-flex justify-content-between align-items-center">
+                                                    <div class="update__edit pr-4">
                                                         <a href="/note/{{ $note->id }}/edit" class="text-uppercase card-link">
                                                             Edit
                                                         </a>
                                                     </div>
-                                                    <div>
+                                                    <div class="update__delete">
                                                         <form
                                                             action="/note/{{ $note->id }}"
                                                             method="POST">
@@ -138,13 +146,13 @@
                                                         </form>
                                                     </div>
                                                 </div>
-                                                
                                             @endif
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card --vod">
+                            <div class="card --vod hide">
                                 <div class="card-body --vod">
                                     <iframe 
                                         class="vod"
@@ -154,7 +162,11 @@
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                         allowfullscreen
                                     ></iframe>
-                                    <button class="btn-close" aria-label="Close" ></button>
+                                    <button class="btn-close --vod" aria-label="Close" >
+                                        <svg class="icon icon-close">
+                                            <use xlink:href="#icon-close"></use>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>

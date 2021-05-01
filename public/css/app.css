@@ -10002,11 +10002,46 @@ h3 {
     border-color: #061C2D;
   }
 }
+.btn.--vod {
+  position: relative;
+  background-color: #061C2D;
+  color: #EBF6FF;
+  height: 3rem;
+  width: 3rem;
+  flex-basis: 3rem;
+  border-radius: 1.5rem;
+}
+.btn-close {
+  position: absolute;
+  top: calc(0% + 1.125rem);
+  right: calc(0% + 1.125rem);
+}
+
 .card {
   position: relative;
-  border: 0px solid #061C2D;
+  border: 0px solid transparent;
   border-radius: 0.4rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.333rem 0.444rem rgba(6, 28, 45, 0.1);
+}
+.card-body__header .cb-header__fighter .fighter {
+  border: 1px solid #061C2D;
+  border-radius: 0.4rem;
+  background-color: #EBF6FF;
+}
+.card-body__header .cb-header__fighter .fighter.--main {
+  width: 90px;
+  margin-right: 0.625rem;
+  margin-bottom: 2.5rem;
+}
+.card-body__header .cb-header__fighter .fighter.--a1 {
+  width: 40px;
+  margin-bottom: 0.625rem;
+}
+.card-body__header .cb-header__fighter .fighter.--a2 {
+  width: 40px;
+}
+.card-body.--vod {
+  position: relative;
 }
 .card.--vod {
   position: absolute;
@@ -10018,7 +10053,10 @@ h3 {
 .card.--vod .vod {
   display: block;
   width: 100%;
-  min-height: 266.45px;
+  min-height: 100%;
+}
+.card-body.--vod {
+  position: relative;
 }
 .card.hide {
   visibility: hidden;
@@ -10032,24 +10070,6 @@ h3 {
 .section.--dark {
   background-color: #061C2D;
   color: #EBF6FF;
-}
-
-.fighter {
-  border: 1px solid #061C2D;
-  border-radius: 0.4rem;
-  background-color: #EBF6FF;
-}
-.fighter.--note {
-  width: 90px;
-  margin-right: 0.625rem;
-  margin-bottom: 2.5rem;
-}
-.fighter.--a1 {
-  width: 40px;
-  margin-bottom: 0.625rem;
-}
-.fighter.--a2 {
-  width: 40px;
 }
 
 @-webkit-keyframes reveal {
@@ -10154,4 +10174,12 @@ body {
   display: block;
   font-weight: 400;
   font-size: 1.5625rem;
+}
+
+.icon {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+.icon-play {
+  fill: #EBF6FF;
 }
