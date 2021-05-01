@@ -5,6 +5,7 @@
     box-shadow: $box-shadow;
     &-body{
         &__header{
+            position: relative;
             .cb-header__fighter{
                 .fighter{
                     border: 1px solid $dark-blue;
@@ -25,8 +26,13 @@
                 }
             }
         }
+        &__combo{
+            .cb__combo{
+                
+            }
+        }
         &.--vod{
-            position: relative;
+            
         }
     }
     &.--vod{

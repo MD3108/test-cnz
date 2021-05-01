@@ -10006,10 +10006,10 @@ h3 {
   position: relative;
   background-color: #061C2D;
   color: #EBF6FF;
-  height: 3rem;
-  width: 3rem;
-  flex-basis: 3rem;
-  border-radius: 1.5rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex-basis: 2.25rem;
+  border-radius: 1.125rem;
 }
 .btn-close {
   position: absolute;
@@ -10022,6 +10022,9 @@ h3 {
   border: 0px solid transparent;
   border-radius: 0.4rem;
   box-shadow: 0 0.333rem 0.444rem rgba(6, 28, 45, 0.1);
+}
+.card-body__header {
+  position: relative;
 }
 .card-body__header .cb-header__fighter .fighter {
   border: 1px solid #061C2D;
@@ -10039,9 +10042,6 @@ h3 {
 }
 .card-body__header .cb-header__fighter .fighter.--a2 {
   width: 40px;
-}
-.card-body.--vod {
-  position: relative;
 }
 .card.--vod {
   position: absolute;
@@ -10176,10 +10176,21 @@ body {
   font-size: 1.5625rem;
 }
 
+.cb-combo__name {
+  font-size: 1.5625rem;
+}
+
 .icon {
   max-width: 1.5rem;
   max-height: 1.5rem;
 }
 .icon-play {
   fill: #EBF6FF;
+  position: absolute;
+  max-width: 1.25rem;
+  max-height: 1.25rem;
+  padding-left: calc((1.5rem - 1.25rem)/2);
+  padding-right: calc((1.5rem - 1.25rem)/2);
+  top: calc(50% - .625rem);
+  left: calc(50% - .625rem);
 }

@@ -4,34 +4,14 @@
         position: relative;
         background-color: $dark-blue;
         color: $blue;
-        height: 3rem;
-        width: 3rem;
-        flex-basis: 3rem;
-        border-radius: 1.5rem;
-        //white-space: nowrap;
-        //text-indent: 1000%;
-        //overflow: hidden;
-        //&::before{
-        //    content: "";
-        //    display: block;
-        //    height: 20px;
-        //    width: auto;
-        //    background-image: url('/storage/images/buttons/play.png');
-        //    background-position: center;
-        //    background-size: contain;
-        //    background-repeat: no-repeat;
-        //    position: absolute;
-        //    top: auto;
-        //    left: calc(50% - 6px);
-        //}
+        height: 2.25rem;
+        width: 2.25rem;
+        flex-basis: 2.25rem;
+        border-radius: 1.125rem;
     }
     &-close{
-        //white-space: nowrap;
-        //overflow: hidden;
-        //text-indent: 120%;
         position: absolute;
         top: calc(0% + 1.125rem);
         right: calc(0% + 1.125rem);
-        //border-radius: ;
     }
 }

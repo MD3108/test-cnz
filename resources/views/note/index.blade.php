@@ -118,35 +118,42 @@
                                                     {{ date("m / d / y", strtotime($note->created_at)) }}
                                                 </span>
                                             </div>
-                                            <div class="cb-footer__likes">
-                                                @foreach ($note->likes as $key=>$like)
-                                                    @if ($loop->last)
-                                                        <div class="likes__count">
-                                                            {{ $loop->count }} likes
-                                                        </div>
+                                            <div class="cb-footer__interactions">
+                                                <div class="interactions__favorites">
+                                                    @if (isset(Auth::user()->id) && Auth::user()->id == $note)
+                                                        {{  }}
                                                     @endif
-                                                @endforeach 
-                                            </div>
-                                            @if (isset(Auth::user()->id) && Auth::user()->id == $note->user_id)
-                                                <div class="cb-footer__update d-flex justify-content-between align-items-center">
-                                                    <div class="update__edit pr-4">
-                                                        <a href="/note/{{ $note->id }}/edit" class="text-uppercase card-link">
-                                                            Edit
-                                                        </a>
-                                                    </div>
-                                                    <div class="update__delete">
-                                                        <form
-                                                            action="/note/{{ $note->id }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="text-uppercase btn btn-danger" type="submit">
-                                                                Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
                                                 </div>
-                                            @endif
+                                                <div class="interactions__likes">
+                                                    @foreach ($note->likes as $key=>$like)
+                                                        @if ($loop->last)
+                                                            <div class="likes__count">
+                                                                {{ $loop->count }} likes
+                                                            </div>
+                                                        @endif
+                                                    @endforeach 
+                                                </div>
+                                                @if (isset(Auth::user()->id) && Auth::user()->id == $note->user_id)
+                                                    <div class="interactions__update d-flex justify-content-between align-items-center">
+                                                        <div class="update__edit pr-4">
+                                                            <a href="/note/{{ $note->id }}/edit" class="text-uppercase card-link">
+                                                                Edit
+                                                            </a>
+                                                        </div>
+                                                        <div class="update__delete">
+                                                            <form
+                                                                action="/note/{{ $note->id }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="text-uppercase btn btn-danger" type="submit">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
 
                                         </div>
                                     </div>
