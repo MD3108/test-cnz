@@ -10,6 +10,36 @@
         padding-left: calc((1.5rem - 1.25rem)/2);
         padding-right: calc((1.5rem - 1.25rem)/2);
         top: calc(50% - .625rem);
-        left: calc(50% - .625rem);
+        left: calc(50% - .525rem);
+    }
+
+    &-favorite{
+        fill: $blue;
+        stroke-linejoin: miter;
+        stroke-linecap: butt; 
+        stroke-miterlimit: 4;
+        stroke-width: 1.0667; 
+        stroke: $dark-blue;
+        
+    }
+
+    &-like{
+        fill: $blue;
+        stroke-linejoin: miter; 
+        stroke-linecap: butt ;
+        stroke-miterlimit: 4; 
+        stroke-width: 1.3333 ;
+        stroke: $dark-blue;
+        &.--fill{
+            position: absolute;
+            top: auto;
+            left: 0;
+            bottom: auto;
+            z-index: 10;
+        }
+    }
+
+    &.--fill{
+        fill: $dark-blue;
     }
 }

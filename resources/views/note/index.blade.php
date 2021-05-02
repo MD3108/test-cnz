@@ -36,18 +36,26 @@
                                             <img class="fighter --main" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                             <div>
                                                 @elseif($loop->index == 1)
-                                                <div>
+                                                <div class="assist">
                                                     <img class="fighter --a1" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                                     <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
-                                                    <span class="assist">{{ $fighter->assist }}</span>                                                    
+                                                    <div class="assist__move --{{ $fighter->assist }}">
+                                                        <span>
+                                                            {{ $fighter->assist }}
+                                                        </span>
+                                                    </div>                                                    
                                                 </div>
 
                                                 @elseif($loop->index == 2)
-                                                    <div>
-                                                        <img class="fighter --a2" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
-                                                        <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
-                                                        <span class="assist">{{ $fighter->assist }}</span>
+                                                <div class="assist">
+                                                    <img class="fighter --a2" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                    <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
+                                                    <div class="assist__move --{{ $fighter->assist }}">
+                                                        <span>
+                                                            {{ $fighter->assist }}
+                                                        </span>
                                                     </div>
+                                                </div>
                                                 @endif    
                                                 @endforeach
                                             </div><!--cb-header__fighter End-->
@@ -55,39 +63,41 @@
                                         <div class="cb-header__details">
                                             <div class="details__categories">
                                                 @foreach ($note->categories as $category)
-                                                    <span>
-                                                        {{ $category->name }}
-                                                    </span>
+                                                    <div class="category">
+                                                        <span>
+                                                            {{ $category->name }}
+                                                        </span>
+                                                    </div>
                                                 @endforeach
                                             </div>
                                             <div class="details__damage text-right">
-                                                <span>
+                                                <span class="damage__value">
                                                     {{ $note->damage }}
                                                 </span>
-                                                <span class="text-uppercase">
-                                                    dmg
+                                                <span class="damage__unit">
+                                                    Damage
                                                 </span>
                                             </div>
-                                            
                                             <div class="details__ki d-flex">
-                                                <div class="ki__start">
-                                                    <span>
-                                                        {{ $note->ki_start }}
+                                                <div class="ki --start">
+                                                    <span class="start__unit">
+                                                        At start
                                                     </span>
-                                                    <span class="">
-                                                        Ki&nbsp;(start)
-                                                    </span>
+                                                    <div class="start__value">
+                                                        <span>
+                                                            {{ $note->ki_start }}&nbsp;Ki
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                                <span>
-                                                    &nbsp;-&nbsp;
-                                                </span>
-                                                <div class="ki__end">
-                                                    <span>
-                                                        {{ $note->ki_end }}
+                                                <div class="ki --end">
+                                                    <span class="end__unit">
+                                                        At end
                                                     </span>
-                                                    <span class="">
-                                                        Ki&nbsp;(end)
-                                                    </span>
+                                                    <div class="end__value">
+                                                        <span>
+                                                            {{ $note->ki_end }}&nbsp;Ki
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div><!-- cb-header__details End -->
@@ -106,6 +116,10 @@
                                         
                                         <div class="cb-combo__notation">
                                             {{ $note->notation }}
+                                            <script>
+                                                var notation = @json($note->notation);
+                                                console.log(notation);
+                                            </script>
                                         </div>
                                     </div><!-- card-body__combo End -->
                                     <div class="card-body__footer pt-4">
@@ -118,52 +132,77 @@
                                                     {{ date("m / d / y", strtotime($note->created_at)) }}
                                                 </span>
                                             </div>
-                                            <div class="cb-footer__interactions">
+                                            <div class="cb-footer__interactions d-flex justify-content-between align-items-center">
                                                 <div class="interactions__favorites">
                                                     @foreach ($note->favorites as $favorite)
                                                         <!-- && Auth::user()->id ==    && Auth::user()->id == $user->id-->
                                                         @foreach ($favorite->users as $user)
                                                             @if (isset(Auth::user()->id) && Auth::user()->id == $user->id )
-                                                                Is Favorite
+                                                                <svg class="icon icon-favorite --fill">
+                                                                    <use xlink:href="#icon-favorite"></use>
+                                                                </svg>
                                                             @elseif (isset(Auth::user()->id) && Auth::user()->id != $user->id )
-                                                                Is Not Favorite
+                                                                <svg class="icon icon-favorite">
+                                                                    <use xlink:href="#icon-favorite"></use>
+                                                                </svg>
                                                             @endif
                                                         @endforeach
                                                     @endforeach 
                                                 </div>
                                                 <div class="interactions__likes">
-                                                    @foreach ($note->likes as $key=>$like)
-                                                        @if ($loop->last)
-                                                            <div class="likes__count">
-                                                                {{ $loop->count }} likes
-                                                            </div>
-                                                        @endif
-                                                    @endforeach 
+                                                    <div class="likes">
+                                                        <svg class="icon icon-like">
+                                                            <use xlink:href="#icon-like"></use>
+                                                        </svg>
+                                                        @foreach ($note->likes as $key=>$like)
+                                                            @foreach ($like->users as $user)
+                                                                @if (isset(Auth::user()->id) && Auth::user()->id == $user->id )
+                                                                    <svg class="icon icon-like --fill">
+                                                                        <use xlink:href="#icon-like"></use>
+                                                                    </svg>
+                                                                @elseif (isset(Auth::user()->id) && Auth::user()->id != $user->id )
+                                                                    
+                                                                @endif
+                                                                @if ($loop->last)
+                                                    </div>
+                                                                    <div class="likes__count">
+                                                                        {{ $loop->count }}
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        @endforeach 
                                                 </div>
                                                 @if (isset(Auth::user()->id) && Auth::user()->id == $note->user_id)
-                                                    <div class="interactions__update d-flex justify-content-between align-items-center">
-                                                        <div class="update__edit pr-4">
-                                                            <a href="/note/{{ $note->id }}/edit" class="text-uppercase card-link">
-                                                                Edit
-                                                            </a>
+                                                    <div class="interactions__update">
+                                                        <div class="update__toggler">
+                                                            <svg class="icon icon-more">
+                                                                <use xlink:href="#icon-more"></use>
+                                                            </svg>
                                                         </div>
-                                                        <div class="update__delete">
-                                                            <form
-                                                                action="/note/{{ $note->id }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button class="text-uppercase btn btn-danger" type="submit">
-                                                                    Delete
-                                                                </button>
-                                                            </form>
+                                                        <div class="update__menu hide">
+                                                            <div class="menu__edit">
+                                                                <a href="/note/{{ $note->id }}/edit" class="text-uppercase d-block btn card-link">
+                                                                    Edit
+                                                                </a>
+                                                            </div>
+                                                            <div class="menu__delete">
+                                                                <form
+                                                                    action="/note/{{ $note->id }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button class="text-uppercase btn" type="submit">
+                                                                        Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 @endif
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </div><!-- card-body__footer End -->
                                 </div>
                             </div>
                             <div class="card --vod hide">
@@ -207,5 +246,5 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
     <script src="{{ URL('/js/masonry.js') }}"></script>
-    <!--<script src="{{ URL('/js/vod.js') }}"></script>-->
+    <!-- <script src="{{ URL('/js/vod.js') }}"></script> -->
 @endsection
