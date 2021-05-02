@@ -10171,23 +10171,22 @@ h3 {
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -1.25rem;
 }
 .card-body__footer .cb-footer__interactions .interactions__update .update__menu.--open {
-  display: block;
-}
-.card-body__footer .cb-footer__interactions .interactions__update .update__menu .menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.625rem;
+  border-radius: 0.4rem;
 }
 .card-body__footer .cb-footer__interactions .interactions__update .update__menu .menu__edit .btn {
   background-color: #FFAA2B;
-  margin-bottom: 0.625rem;
+  margin-left: 0.625rem;
 }
 .card-body__footer .cb-footer__interactions .interactions__update .update__menu .menu__delete .btn {
   background-color: #F85656;
+  margin-left: 0.625rem;
 }
 .card.--vod {
   position: absolute;

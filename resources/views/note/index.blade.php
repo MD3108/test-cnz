@@ -182,7 +182,9 @@
                                                         <div class="update__menu hide">
                                                             <div class="menu__edit">
                                                                 <a href="/note/{{ $note->id }}/edit" class="text-uppercase d-block btn card-link">
-                                                                    Edit
+                                                                    <svg class="icon icon-edit">
+                                                                        <use xlink:href="#icon-edit"></use>
+                                                                    </svg>
                                                                 </a>
                                                             </div>
                                                             <div class="menu__delete">
@@ -192,7 +194,9 @@
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button class="text-uppercase btn" type="submit">
-                                                                        Delete
+                                                                        <svg class="icon icon-delete">
+                                                                            <use xlink:href="#icon-delete"></use>
+                                                                        </svg>
                                                                     </button>
                                                                 </form>
                                                             </div>

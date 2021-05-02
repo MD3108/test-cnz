@@ -179,24 +179,25 @@
                                     display: none;
                                     position: absolute;
                                     top: 100%;
-                                    right: 0;
+                                    right: -1.25rem;
                                     &.--open{
-                                        display: block;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        background-color: $white;
+                                        padding: $ml-cb-footer-interactions;
+                                        border-radius: $border-radius;
                                     }
                                     .menu{
-                                       display: flex;
-                                       justify-content: center;
-                                       align-items: center;
-                                       flex-wrap: nowrap;
                                         &__edit{
                                             & .btn{
                                                 background-color: $orange;
-                                                margin-bottom: .625rem;
+                                                margin-left: $ml-cb-footer-interactions;
                                             }
                                         }   
                                         &__delete{
                                             & .btn{
                                                 background-color: $red;
+                                                margin-left: $ml-cb-footer-interactions;
                                             }
                                         }
                                     }
