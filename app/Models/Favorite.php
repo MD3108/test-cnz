@@ -12,4 +12,8 @@ class Favorite extends Model
     public function users(){
         return $this->belongsToMany((User::class));
     }
+
+    public function notes(){
+        return $this->belongsToMany(Note::class);
+    }
 }

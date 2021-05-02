@@ -120,9 +120,16 @@
                                             </div>
                                             <div class="cb-footer__interactions">
                                                 <div class="interactions__favorites">
-                                                    @if (isset(Auth::user()->id) && Auth::user()->id == $note)
-                                                        {{  }}
-                                                    @endif
+                                                    @foreach ($note->favorites as $favorite)
+                                                        <!-- && Auth::user()->id ==    && Auth::user()->id == $user->id-->
+                                                        @foreach ($favorite->users as $user)
+                                                            @if (isset(Auth::user()->id) && Auth::user()->id == $user->id )
+                                                                Is Favorite
+                                                            @elseif (isset(Auth::user()->id) && Auth::user()->id != $user->id )
+                                                                Is Not Favorite
+                                                            @endif
+                                                        @endforeach
+                                                    @endforeach 
                                                 </div>
                                                 <div class="interactions__likes">
                                                     @foreach ($note->likes as $key=>$like)

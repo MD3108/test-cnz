@@ -28,4 +28,8 @@ class Note extends Model
     public function likes() {
         return $this->belongsToMany(Like::class);
     }
+
+    public function favorites(){
+        return $this->belongsToMany(Favorite::class);
+    }
 }
