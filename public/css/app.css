@@ -10250,6 +10250,10 @@ body {
   padding-top: 76px;
 }
 
+iframe {
+  border: 0px;
+}
+
 .section {
   padding-top: 4.375rem;
   padding-bottom: 4.375rem;

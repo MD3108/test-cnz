@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col">
                             <h1 class="title">
-                                IUpdate Note
+                                Update Note
                             </h1>
                             @if ($errors->any())
                                 <div class="mb-3">

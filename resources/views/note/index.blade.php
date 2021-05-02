@@ -214,8 +214,7 @@
                                     <iframe 
                                         class="vod"
                                         src="{{ url($note->youtube_url) }}" 
-                                        title="YouTube video player" 
-                                        frameborder="0" 
+                                        title="YouTube video player"  
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                         allowfullscreen
                                     ></iframe>
