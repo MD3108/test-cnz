@@ -1,8 +1,33 @@
+body{
+    padding-top: 76px;
+}
 .section{
     padding-top: $p-section;
     padding-bottom: $p-section;
     &.--dark{
         background-color: $dark-blue;
         color: $blue;
+    }
+}
+.logo{
+    &-letters{
+        &__part{
+            font-size: 1rem;
+            line-height: 1rem;
+            font-weight: $font-weight-bold;
+            color: $dark-blue;
+            text-transform: uppercase;
+            &.--combo{
+                color: $orange;
+                padding-top: .15rem;
+            }
+            &.--note{
+                letter-spacing: .25rem;
+            }
+            &.--Z{
+                font-size: $font-size-big;
+                line-height: $font-size-big;
+            }
+        }
     }
 }

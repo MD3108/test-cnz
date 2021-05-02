@@ -150,7 +150,11 @@
                 }
                 &__interactions{
                     .interactions{
+                        &__favorites{
+                            cursor: pointer;
+                        }
                         &__likes{
+                            cursor: pointer;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
@@ -207,9 +211,6 @@
                     }
                 }
             }
-        }
-        &.--vod{
-            
         }
     }
     &.--vod{

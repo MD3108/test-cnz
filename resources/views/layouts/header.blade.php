@@ -1,7 +1,22 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name') }}
+        </a>
+        <a class="logo-letters" href="{{ url('/') }}">
+            <div class="d-flex align-items-center">
+                <div>
+                    <span class="d-block logo-letters__part --combo">
+                        Combo
+                    </span>
+                    <span class="d-block logo-letters__part --note">
+                        Note
+                    </span>
+                </div>
+                <span class=" logo-letters__part --Z">
+                    Z
+                </span>
+            </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -44,7 +59,7 @@
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             {{ Auth::user()->name }}
                         </a>
 

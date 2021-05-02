@@ -33,11 +33,11 @@
                                         <div class="cb-header__fighter d-flex ">
                                             @foreach ($note->fighters as $fighter)
                                             @if ($loop->first)
-                                            <img class="fighter --main" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                            <img class="fighter --main" src="{{ asset('/storage' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                             <div>
                                                 @elseif($loop->index == 1)
                                                 <div class="assist">
-                                                    <img class="fighter --a1" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                    <img class="fighter --a1" src="{{ asset('/storage' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                                     <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
                                                     <div class="assist__move --{{ $fighter->assist }}">
                                                         <span>
@@ -48,7 +48,7 @@
 
                                                 @elseif($loop->index == 2)
                                                 <div class="assist">
-                                                    <img class="fighter --a2" src="{{ asset('/storage/' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
+                                                    <img class="fighter --a2" src="{{ asset('/storage' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                                     <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
                                                     <div class="assist__move --{{ $fighter->assist }}">
                                                         <span>
@@ -155,21 +155,21 @@
                                                             <use xlink:href="#icon-like"></use>
                                                         </svg>
                                                         @foreach ($note->likes as $key=>$like)
-                                                            @foreach ($like->users as $user)
-                                                                @if (isset(Auth::user()->id) && Auth::user()->id == $user->id )
-                                                                    <svg class="icon icon-like --fill">
-                                                                        <use xlink:href="#icon-like"></use>
-                                                                    </svg>
-                                                                @elseif (isset(Auth::user()->id) && Auth::user()->id != $user->id )
+                                                        @foreach ($like->users as $user)
+                                                        @if (isset(Auth::user()->id) && Auth::user()->id == $user->id )
+                                                        <svg class="icon icon-like --fill">
+                                                            <use xlink:href="#icon-like"></use>
+                                                        </svg>
+                                                        @elseif (isset(Auth::user()->id) && Auth::user()->id != $user->id )
                                                                     
-                                                                @endif
-                                                                @if ($loop->last)
+                                                        @endif
+                                                        @if ($loop->last)
                                                     </div>
-                                                                    <div class="likes__count">
-                                                                        {{ $loop->count }}
-                                                                    </div>
-                                                                @endif
-                                                            @endforeach
+                                                            <div class="likes__count">
+                                                                {{ $loop->count }}
+                                                            </div>
+                                                        @endif
+                                                        @endforeach
                                                         @endforeach 
                                                 </div>
                                                 @if (isset(Auth::user()->id) && Auth::user()->id == $note->user_id)

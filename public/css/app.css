@@ -10142,7 +10142,11 @@ h3 {
 .card-body__footer .cb-footer__user-date .ud__date {
   display: block;
 }
+.card-body__footer .cb-footer__interactions .interactions__favorites {
+  cursor: pointer;
+}
 .card-body__footer .cb-footer__interactions .interactions__likes {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10208,6 +10212,44 @@ h3 {
   z-index: -1;
 }
 
+.navbar-brand {
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-image: url("/storage/images/logo.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 1.25rem;
+  margin-right: inherit;
+}
+.navbar-light a.logo-letters {
+  padding-left: 0.3125rem;
+}
+.navbar-light a.logo-letters:hover {
+  text-decoration: none;
+}
+.navbar-light a.logo-letters:hover .logo-letters__part {
+  color: #051929;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(6, 28, 45, 0.8);
+  margin-left: 2rem;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #061c2d;
+}
+.navbar-light .navbar-nav .nav-item .btn-primary {
+  margin-right: 1.25rem;
+}
+
+body {
+  padding-top: 76px;
+}
+
 .section {
   padding-top: 4.375rem;
   padding-bottom: 4.375rem;
@@ -10215,6 +10257,25 @@ h3 {
 .section.--dark {
   background-color: #061C2D;
   color: #EBF6FF;
+}
+
+.logo-letters__part {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
+  color: #061C2D;
+  text-transform: uppercase;
+}
+.logo-letters__part.--combo {
+  color: #FFAA2B;
+  padding-top: 0.15rem;
+}
+.logo-letters__part.--note {
+  letter-spacing: 0.25rem;
+}
+.logo-letters__part.--Z {
+  font-size: 2.4375rem;
+  line-height: 2.4375rem;
 }
 
 @-webkit-keyframes reveal {
