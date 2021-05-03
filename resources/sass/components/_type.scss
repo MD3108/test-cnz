@@ -24,7 +24,13 @@ body{
     }
     &.--form{
         font-weight: $font-weight-base;
+        font-size: $font-size-big;
         text-align: center;
+    }
+    &.--progression{
+        font-weight: $font-weight-base;
+        font-size: $font-size-big;
+        color:  $blue;
     }
 }
 
