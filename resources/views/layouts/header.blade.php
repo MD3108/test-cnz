@@ -33,6 +33,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/note">
                         Combo Notes
+                        <svg class="icon icon-search">
+                            <use xlink:href="#icon-search"></use>
+                        </svg>
                     </a>
                 </li>
             </ul>
@@ -53,8 +56,11 @@
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="btn btn-primary nav-link text-uppercase" href="/note/login">
-                            Create Note
+                        <a class="btn btn-primary nav-link " href="/note/login">
+                            Create Combo
+                            <svg class="icon icon-add">
+                                <use xlink:href="#icon-add"></use>
+                            </svg>
                         </a>
                     </li>
                 @else
@@ -76,8 +82,11 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary nav-link text-uppercase" href="/note/create">
-                            Create Note
+                        <a class="btn btn-primary nav-link " href="/note/create">
+                            Create Combo
+                            <svg class="icon icon-add">
+                                <use xlink:href="#icon-add"></use>
+                            </svg>
                         </a>
                     </li>
                 @endguest

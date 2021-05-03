@@ -10002,6 +10002,14 @@ h3 {
     border-color: #061C2D;
   }
 }
+.btn {
+  transition: all 0.25s ease-out;
+  box-shadow: 0 0.333rem 0.444rem rgba(6, 28, 45, 0.1);
+}
+.btn:hover {
+  transform: translateY(0.025rem);
+  box-shadow: 0 0.222rem 0.333rem rgba(6, 28, 45, 0.15);
+}
 .btn.--vod {
   position: relative;
   background-color: #061C2D;
@@ -10393,6 +10401,17 @@ body {
 .icon {
   max-width: 1.5rem;
   max-height: 1.5rem;
+}
+.icon-search {
+  stroke: rgba(6, 28, 45, 0.7);
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  stroke-width: 2;
+  margin-left: 0.3125rem;
+}
+.icon-add {
+  margin-left: 0.3125rem;
 }
 .icon-play {
   fill: #EBF6FF;
