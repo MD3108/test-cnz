@@ -22,6 +22,10 @@ body{
         font-weight: $font-weight-base;
         font-size: $font-size-title-sub;
     }
+    &.--form{
+        font-weight: $font-weight-base;
+        text-align: center;
+    }
 }
 
 .cb-combo__name{

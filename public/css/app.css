@@ -10270,6 +10270,12 @@ iframe {
   background-color: #061C2D;
   color: #EBF6FF;
 }
+.section.--form .row {
+  background-color: #fff;
+  border: 0px solid transparent;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.333rem 0.444rem rgba(6, 28, 45, 0.1);
+}
 
 .logo-letters__part {
   font-size: 1rem;
@@ -10363,6 +10369,28 @@ iframe {
   animation-direction: reverse;
 }
 
+.form__part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form__part.--fighter .form__fighters {
+  max-width: 1065px;
+}
+.form__part.--fighter .form__fighters .fighters__select .f-select__fighter {
+  max-width: 9.0909090909%;
+}
+.form__part.--fighter .form__fighters .fighters__select .f-select__fighter img {
+  max-width: 90px;
+  height: auto;
+}
+.form__part.--fighter .form__fighters .fighters__chosen .f-chosen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
 .grid-item {
   margin-bottom: 1.25rem;
   width: calc( (100% / 3) - 0.94% );
@@ -10392,6 +10420,10 @@ body {
   display: block;
   font-weight: 400;
   font-size: 1.5625rem;
+}
+.title.--form {
+  font-weight: 400;
+  text-align: center;
 }
 
 .cb-combo__name {

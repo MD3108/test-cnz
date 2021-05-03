@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Fighter;
 use App\Models\Like;
 use Illuminate\Http\Request;
@@ -37,7 +38,15 @@ class NotesController extends Controller
      */
     public function create()
     {
-        return view('note.create');
+        $fighters = Fighter::all();
+        $categories = Category::all();
+        //$difficulties = Note::compact('difficulty');
+        //dd($difficulties);
+        return view('note.create',[
+            'fighters' => $fighters,
+            'categories' => $categories,
+            //'difficulties' => $difficulties,
+        ]);
     }
 
     /**
@@ -48,27 +57,28 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'fighter' => 'required',
-            'name' => 'required|max:255',
-            'notation' => 'required',
-            'damage' => 'required',
-            'ki-start' => 'required',
-            'ki-end' => 'required',
-        ]); 
         
-        Note::create([
-            'fighter' => $request->input('fighter'),
-            'name' => $request->input('name'),
-            'notation' => $request->input('notation'),
-            'damage' => $request->input('damage'),
-            'ki_start' => $request->input('ki-start'),
-            'ki_end' => $request->input('ki-end'),
-            'user_id' => auth()->user()->id
-        ]);
-    
-        return redirect('/note')
-            ->with('message', 'Your Note has been created');
+        //$request->validate([
+        //    'fighter' => 'required',
+        //    'name' => 'required|max:255',
+        //    'notation' => 'required',
+        //    'damage' => 'required',
+        //    'ki-start' => 'required',
+        //    'ki-end' => 'required',
+        //]); 
+        //
+        //Note::create([
+        //    'fighter' => $request->input('fighter'),
+        //    'name' => $request->input('name'),
+        //    'notation' => $request->input('notation'),
+        //    'damage' => $request->input('damage'),
+        //    'ki_start' => $request->input('ki-start'),
+        //    'ki_end' => $request->input('ki-end'),
+        //    'user_id' => auth()->user()->id
+        //]);
+
+        //return redirect('/note')
+        //    ->with('message', 'Your Note has been created');
     }
 
     /**
