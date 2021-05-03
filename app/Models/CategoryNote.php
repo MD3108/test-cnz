@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryNote extends Model
 {
+    protected $fillable = ['category_id', 'note_id'];
     use HasFactory;
     protected $table = 'category_note';
     public $timestamps = false;

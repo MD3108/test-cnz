@@ -18,12 +18,13 @@ class Notes extends Migration
 
             //-- Main --//
             $table->string('name', 45);
-            $table->json('notation');
+            // ! return this to $table->json('notation')
+            $table->json('notation')->nullable();
 
             //-- Détails --//
             $table->integer('damage');
-            $table->float('ki_start', 2, 2);
-            $table->float('ki_end', 2, 2);
+            $table->float('ki_start', 3, 2);
+            $table->float('ki_end', 3, 2);
             $table->enum('difficulty', ['easy', 'average', 'hard', 'expert']);
             $table->string('youtube_url')->nullable();
 

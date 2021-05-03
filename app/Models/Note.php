@@ -11,6 +11,11 @@ class Note extends Model
 
     protected $guarded = [];
 
+    //remove this if not usable for json
+    protected $casts = [
+        'notation' => 'json',
+    ];
+
     use HasFactory;
 
     public function user(){

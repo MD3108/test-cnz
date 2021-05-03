@@ -98,17 +98,11 @@
                                             </h2>
                                             <div class="f-chosen">
                                                 <div class="f-chosen__el --main">
-                                                    <label class="f-select__fighter" for="chosen-1" >
-                                                        <img src="#" alt="user select 1">
-                                                    </label>
-                                                    <input type="checkbox" name="chosen-1" id="chosen-1">
+                                                    fighter 1
                                                 </div>
                                                 <div class="f-chosen__el --a1">
                                                     <div>
-                                                        <label class="f-select__fighter" for="chosen-2" >
-                                                            <img src="#" alt="user select 2">
-                                                        </label>
-                                                        <input type="checkbox" name="chosen-2" id="chosen-2">
+                                                        fighter 2
                                                     </div>
                                                     <div>
                                                         <select name="assist-1" id="a1">
@@ -126,10 +120,7 @@
                                                 </div>
                                                 <div class="f-chosen__el --a2">
                                                     <div>
-                                                        <label class="f-select__fighter" for="chosen-3" >
-                                                            <img src="#" alt="user select 3">
-                                                        </label>
-                                                        <input type="checkbox" name="chosen-2" id="chosen-3">
+                                                        fighter 3
                                                     </div>
                                                     <div>
                                                         <select name="assist-2" id="a2">
@@ -163,7 +154,7 @@
                                         <label class="form-label" for="notation-list">
                                             Enter your combo - press <span class="text-uppercase">them buttons</span>
                                         </label>
-                                        <textarea name="notation" id="notation-list" class="hide"></textarea>
+                                        <textarea name="notation" id="notation-list" class=""></textarea>
                                         <div class="notation form-control" id="notation-render">
                                             <img src="{{ asset('/storage'. '/images/buttons/L.png') }}" alt="L">
                                         </div>
@@ -211,26 +202,32 @@
                                             <label class="" for="easy" >
                                                 Easy
                                             </label>
-                                            <input type="checkbox" name="difficulty" id="easy">
+                                            <input type="radio" name="difficulty" id="easy" value="easy">
                                         </div>
                                         <div>
-                                            <label class="" for="Average" >
+                                            <label class="" for="average" >
                                                 Average
                                             </label>
-                                            <input type="checkbox" name="difficulty" id="Average">
+                                            <input type="radio" name="difficulty" id="average" value="average">
                                         </div><div>
-                                            <label class="" for="Hard" >
+                                            <label class="" for="hard" >
                                                 Hard
                                             </label>
-                                            <input type="checkbox" name="difficulty" id="Hard">
+                                            <input type="radio" name="difficulty" id="hard" value="hard">
                                         </div>
                                         <div>
                                             <!--Scarlet-photon LvL-->
-                                            <label class="" for="Expert" >
+                                            <label class="" for="expert" >
                                                 Expert
                                             </label>
-                                            <input type="checkbox" name="difficulty" id="Expert">
+                                            <input type="radio" name="difficulty" id="expert" value="expert">
                                         </div>
+                                    </div>
+                                    <div>
+                                        <label class="" for="youtube" >
+                                            Your combo preview as youtube URL
+                                        </label>
+                                        <input type="text" name="youtube" id="youtube" value="" placeholder="https://www.youtube.com/embed/">
                                     </div>
                                     <button class="btn btn-primary mb-3" >
                                         Next
@@ -253,6 +250,8 @@
                                 <div class="mb-3">
                                     <button type="submit" class="btn btn-primary mb-3">Publish</button>
                                 </div>
+
+                                <input class="hide" type="number" name="note_id" id="note_id" value="{# $lastNoteId+1 }}">
                             </form>
                         </div>
                         <div class="col-3">

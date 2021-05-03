@@ -115,11 +115,11 @@
                                         </div>
                                         
                                         <div class="cb-combo__notation">
-                                            {{ $note->notation }}
-                                            <script>
+                                            {{-- var_dump($note->notation) --}}
+                                            <!--<script>
                                                 var notation = @json($note->notation);
                                                 console.log(notation);
-                                            </script>
+                                            </script>-->
                                         </div>
                                     </div><!-- card-body__combo End -->
                                     <div class="card-body__footer pt-4">
