@@ -230,6 +230,7 @@
         
     }
     &.hide{
+        display: block;
         visibility: hidden;
         z-index: -1;
     }

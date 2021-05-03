@@ -57,7 +57,41 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
+        dd( $request->fighters);
+        $request->validate([
+            'fighter' => 'required',
+            'chosen' => 'required',
+            //'chosen-1' => '',
+            'assist-1' => '',
+            //'chosen-2' => '',
+            'assist-2' => '',
+            'name' => 'required',
+            'notation' => 'required',
+            'damage' => 'required',
+            'ki-start' => 'required',
+            'ki-end' => 'required',
+            'category' => 'required',
+            'difficulty' => 'required',
+        ]);
         
+        Note::create([
+            'fighter' => $request->input('fighter'),
+            'chosen' => $request->input('chosen'),
+            'assist-1' => $request->input('assist-1'),
+            'assist-2' => $request->input('assist-2'),
+            'name' => $request->input('name'),
+            'notation' => $request->input('notation'),
+            'damage' => $request->input('damage'),
+            'ki_start' => $request->input('ki-start'),
+            'ki_end' => $request->input('ki-end'),
+            'category' => $request->input('category'),
+            'difficulty' => $request->input('difficulty'),
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect('/note')
+            ->with('message', 'Your Note has been created');
+
         //$request->validate([
         //    'fighter' => 'required',
         //    'name' => 'required|max:255',

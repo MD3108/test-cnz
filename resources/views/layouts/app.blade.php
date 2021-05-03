@@ -33,7 +33,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="body">
     @include('layouts.sprite')
     <div id="app">
         

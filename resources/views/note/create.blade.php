@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="body --form">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <!--Warning-->
             <symbol id="icon-warning" viewBox="0 0 10 32">
@@ -51,7 +51,7 @@
             </symbol>
         </svg>
     <div id="app">
-        <main class="py-4">
+        <main class="main --form">
             <section class="section --form">
                 <div class="container">
                     <div class="row">
@@ -87,7 +87,7 @@
                                             <label class="f-select__fighter" for="{{ $fighter->id }}" >
                                                 <img src="{{ asset('/storage' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                             </label>
-                                            <input type="checkbox" name="{{ $fighter->name }}" id="{{ $fighter->id }}">
+                                            <input type="checkbox" name="fighters[]" id="{{ $fighter->id }}" value="{{ $fighter->id }}">
                                             @endforeach
                                         </div>
                                        
@@ -104,20 +104,50 @@
                                                     <input type="checkbox" name="chosen-1" id="chosen-1">
                                                 </div>
                                                 <div class="f-chosen__el --a1">
-                                                    <label class="f-select__fighter" for="chosen-2" >
-                                                        <img src="#" alt="user select 2">
-                                                    </label>
-                                                    <input type="checkbox" name="chosen-2" id="chosen-2">
+                                                    <div>
+                                                        <label class="f-select__fighter" for="chosen-2" >
+                                                            <img src="#" alt="user select 2">
+                                                        </label>
+                                                        <input type="checkbox" name="chosen-2" id="chosen-2">
+                                                    </div>
+                                                    <div>
+                                                        <select name="assist-1" id="a1">
+                                                            <option value="A">
+                                                                A
+                                                            </option>
+                                                            <option value="B">
+                                                                B
+                                                            </option>
+                                                            <option value="C">
+                                                                C
+                                                            </option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                                 <div class="f-chosen__el --a2">
-                                                    <label class="f-select__fighter" for="chosen-3" >
-                                                        <img src="#" alt="user select 3">
-                                                    </label>
-                                                    <input type="checkbox" name="chosen-3" id="chosen-3">
+                                                    <div>
+                                                        <label class="f-select__fighter" for="chosen-3" >
+                                                            <img src="#" alt="user select 3">
+                                                        </label>
+                                                        <input type="checkbox" name="chosen-2" id="chosen-3">
+                                                    </div>
+                                                    <div>
+                                                        <select name="assist-2" id="a2">
+                                                            <option value="A">
+                                                                A
+                                                            </option>
+                                                            <option value="B">
+                                                                B
+                                                            </option>
+                                                            <option value="C">
+                                                                C
+                                                            </option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary mb-3" type="submit">
+                                        <button class="btn btn-primary mb-3" >
                                             Next
                                         </button>
                                     </div>
@@ -130,14 +160,16 @@
                                         <input name="name" type="text" class="form-control" id="name" placeholder="My first Combo Note">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">
+                                        <label class="form-label" for="notation-list">
                                             Enter your combo - press <span class="text-uppercase">them buttons</span>
                                         </label>
-                                        <div class="notation form-control" id="notation">
+                                        <textarea name="notation" id="notation-list" class="hide"></textarea>
+                                        <div class="notation form-control" id="notation-render">
                                             <img src="{{ asset('/storage'. '/images/buttons/L.png') }}" alt="L">
                                         </div>
+                                        
                                     </div>
-                                    <button class="btn btn-primary mb-3" type="submit">
+                                    <button class="btn btn-primary mb-3" >
                                         Next
                                     </button>
                                 </div>
@@ -169,7 +201,7 @@
                                                 <label class="" for="{{ $category->name }}" >
                                                     {{ $category->name }}
                                                 </label>
-                                                <input type="checkbox" name="category" id="{{ $category->name }}">
+                                                <input type="checkbox" name="categories[]" id="{{ $category->name }}" value="{{ $category->id }}">
                                             </div>
                                             @endforeach
                                         </div>
@@ -179,28 +211,28 @@
                                             <label class="" for="easy" >
                                                 Easy
                                             </label>
-                                            <input type="checkbox" name="easy" id="easy">
+                                            <input type="checkbox" name="difficulty" id="easy">
                                         </div>
                                         <div>
                                             <label class="" for="Average" >
                                                 Average
                                             </label>
-                                            <input type="checkbox" name="Average" id="Average">
+                                            <input type="checkbox" name="difficulty" id="Average">
                                         </div><div>
                                             <label class="" for="Hard" >
                                                 Hard
                                             </label>
-                                            <input type="checkbox" name="Hard" id="Hard">
+                                            <input type="checkbox" name="difficulty" id="Hard">
                                         </div>
                                         <div>
                                             <!--Scarlet-photon LvL-->
                                             <label class="" for="Expert" >
                                                 Expert
                                             </label>
-                                            <input type="checkbox" name="Expert" id="Expert">
+                                            <input type="checkbox" name="difficulty" id="Expert">
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary mb-3" type="submit">
+                                    <button class="btn btn-primary mb-3" >
                                         Next
                                     </button>
                                 </div>
@@ -208,11 +240,11 @@
                                 <div class="form__part --check" data-type="check">
                                     <div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-primary mb-3" type="submit">
+                                    <button class="btn btn-primary mb-3" >
                                         Next
                                     </button>
                                     

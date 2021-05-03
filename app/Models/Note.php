@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    protected $fillable = ['name', 'notation', 'damage', 'ki_start', 'ki_end', 'user_id'];
+    protected $fillable = ['name', 'notation', 'damage', 'ki_start', 'ki_end', 'difficulty', 'user_id'];
 
     protected $guarded = [];
 

@@ -1,8 +1,24 @@
-body{
+.body{
     padding-top: 76px;
+    &.--form{
+        padding-top: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    }
 }
 iframe{
     border: 0px;
+}
+.hide{
+    display: none;
 }
 .section{
     padding-top: $p-section;
@@ -12,6 +28,9 @@ iframe{
         color: $blue;
     }
     &.--form{
+        max-height: 915px;
+            height: 84.72222222222222vh;
+            overflow: auto;
         padding-top: inherit;
         padding-bottom: inherit;
         & .row{

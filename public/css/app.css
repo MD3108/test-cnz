@@ -10216,6 +10216,7 @@ h3 {
   position: relative;
 }
 .card.hide {
+  display: block;
   visibility: hidden;
   z-index: -1;
 }
@@ -10254,12 +10255,28 @@ h3 {
   margin-right: 1.25rem;
 }
 
-body {
+.body {
   padding-top: 76px;
+}
+.body.--form {
+  padding-top: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body.--form .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 iframe {
   border: 0px;
+}
+
+.hide {
+  display: none;
 }
 
 .section {
@@ -10271,6 +10288,9 @@ iframe {
   color: #EBF6FF;
 }
 .section.--form {
+  max-height: 915px;
+  height: 84.7222222222vh;
+  overflow: auto;
   padding-top: inherit;
   padding-bottom: inherit;
 }
