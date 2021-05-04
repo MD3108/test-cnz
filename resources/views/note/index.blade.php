@@ -27,7 +27,9 @@
                     <div class="grid --notes">
                         @foreach ($notes as $note)
                         <div class="grid-item">
-                            <div class="card">
+                            <!-- find a solution to grid item to remove this section tag -->
+                            <section>
+                                <div class="card">
                                 <div class="card-body">
                                     <div class="card-body__header d-flex justify-content-between">
                                         <div class="cb-header__fighter d-flex ">
@@ -39,9 +41,9 @@
                                                 <div class="assist">
                                                     <img class="fighter --a1" src="{{ asset('/storage' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                                     <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
-                                                    <div class="assist__move --{{ $fighter->assist }}">
+                                                    <div class="assist__move --{{ $note->assistOne }}">
                                                         <span>
-                                                            {{ $fighter->assist }}
+                                                            {{ $note->assistOne }}
                                                         </span>
                                                     </div>                                                    
                                                 </div>
@@ -50,9 +52,9 @@
                                                 <div class="assist">
                                                     <img class="fighter --a2" src="{{ asset('/storage' .$fighter->image_path) }}" alt="{{ $fighter->name }}">
                                                     <!-- --a --b --c for the 3 diffrent assist & depoending which was chosen-->
-                                                    <div class="assist__move --{{ $fighter->assist }}">
+                                                    <div class="assist__move --{{ $note->assistTwo }}">
                                                         <span>
-                                                            {{ $fighter->assist }}
+                                                            {{ $note->assistTwo }}
                                                         </span>
                                                     </div>
                                                 </div>
@@ -208,25 +210,25 @@
                                         </div>
                                     </div><!-- card-body__footer End -->
                                 </div>
-                            </div>
-                            <div class="card --vod hide">
-                                <div class="card-body --vod">
-                                    <iframe 
-                                        class="vod"
-                                        src="{{ url($note->youtube_url) }}" 
-                                        title="YouTube video player"  
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen
-                                    ></iframe>
-                                    <button class="btn-close --vod" aria-label="Close" >
-                                        <svg class="icon icon-close">
-                                            <use xlink:href="#icon-close"></use>
-                                        </svg>
-                                    </button>
                                 </div>
-                            </div>
+                                <div class="card --vod hide">
+                                    <div class="card-body --vod">
+                                        <iframe 
+                                            class="vod"
+                                            src="{{ url($note->youtube_url) }}" 
+                                            title="YouTube video player"  
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                        ></iframe>
+                                        <button class="btn-close --vod" aria-label="Close" >
+                                            <svg class="icon icon-close">
+                                                <use xlink:href="#icon-close"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
-
                         @endforeach
                     </div>
                     <div class="page-load-status">

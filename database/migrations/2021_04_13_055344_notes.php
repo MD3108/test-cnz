@@ -19,7 +19,10 @@ class Notes extends Migration
             //-- Main --//
             $table->string('name', 45);
             // ! return this to $table->json('notation')
-            $table->json('notation')->nullable();
+            //$table->json('notation')->nullable();
+
+            $table->enum('assistOne', ['A', 'B', 'C']);
+            $table->enum('assistTwo', ['A', 'B', 'C']);
 
             //-- Détails --//
             $table->integer('damage');

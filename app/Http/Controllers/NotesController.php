@@ -94,9 +94,10 @@ class NotesController extends Controller
             //'difficulty' => $request->input('difficulty'),
             //'user_id' => auth()->user()->id
         //]);
-
         $note = new Note([
             'name' => $request->input('name'),
+            'assistOne' => $request->input('assist-1'),
+            'assistTwo' => $request->input('assist-2'),
             'notation' => $request->input('notation'),
             'damage' => $request->input('damage'),
             'ki_start' => $request->input('ki-start'),
@@ -105,23 +106,27 @@ class NotesController extends Controller
             'difficulty' => $request->input('difficulty'),
             'user_id' => auth()->user()->id,
         ]); 
+
         // ! remove nullable from Note.php once notation json solution found
         $note->save();
         $noteId = $note->id;
-        foreach( $request->fighters as $key=>$fighter){
-            FighterNote::create([
-                'fighter_id' => $fighter,
-                'note_id' => $noteId,
-            ]);
+
+        foreach( $request->fighters as $fighter){
+            $note->fighters()->attach($fighter);
+            //FighterNote::create([
+            //    'fighter_id' => $fighter,
+            //    'note_id' => $noteId,
+            //]);
         }
 
         foreach( $request->categories as $category){
-            CategoryNote::create([
-                'category_id' => $category,
-                'note_id' => $noteId,
-            ]);
+            $note->categories()->attach($category);
+            //CategoryNote::create([
+            //    'category_id' => $category,
+            //    'note_id' => $noteId,
+            //]);
         }
-
+        
         return redirect('/note')
             ->with('message', 'Your Note has been created');
 

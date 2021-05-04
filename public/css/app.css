@@ -10326,6 +10326,7 @@ iframe {
 .logo-letters__part.--combo {
   color: #FFAA2B;
   padding-top: 0.15rem;
+  font-weight: 400;
 }
 .logo-letters__part.--note {
   letter-spacing: 0.25rem;
@@ -10434,7 +10435,8 @@ iframe {
 
 .grid-item {
   margin-bottom: 1.25rem;
-  width: calc( (100% / 3) - 0.94% );
+  max-width: 450px;
+  width: 33.333%;
 }
 
 body {

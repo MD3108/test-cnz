@@ -154,7 +154,7 @@
                                         <label class="form-label" for="notation-list">
                                             Enter your combo - press <span class="text-uppercase">them buttons</span>
                                         </label>
-                                        <textarea name="notation" id="notation-list" class=""></textarea>
+                                        <textarea name="notation" id="notation-list" class="hide"></textarea>
                                         <div class="notation form-control" id="notation-render">
                                             <img src="{{ asset('/storage'. '/images/buttons/L.png') }}" alt="L">
                                         </div>

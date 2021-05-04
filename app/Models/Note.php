@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    protected $fillable = ['name', 'notation', 'damage', 'ki_start', 'ki_end', 'difficulty', 'user_id'];
+    // ! add to fillable once  "  , 'notation'   "
+    protected $fillable = ['name', 'damage', 'ki_start', 'ki_end', 'difficulty', 'user_id'];
 
     protected $guarded = [];
 
-    //remove this if not usable for json
-    protected $casts = [
-        'notation' => 'json',
-    ];
+    // ! remove this if not usable for json
+    //protected $casts = [
+    //    'notation' => 'json',
+    //];
 
     use HasFactory;
 

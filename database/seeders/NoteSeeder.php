@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Note;
 use Illuminate\Database\Seeder;
+use Database\Seeders\factory;
+use App\Models\Fighter;
 
 class NoteSeeder extends Seeder
 {
@@ -14,30 +16,37 @@ class NoteSeeder extends Seeder
      */
     public function run()
     {
-        Note::create([
-            //-- Main --//
-            'name' => 'My first Combo Note',
-            'notation' => '{ "array": [ "2xL", "2xM", "2xH"] }' ,
-            //-- Fighters --//
-            //'fighter_name' => 'SSJ Goku',
-            //'fighter_img' => '/storage/images/fighters/ssj-goku.png',
-            //'assist-1_name' => 'SSJ Vegeta',
-            //'assist-1_img' => '/storage/images/fighters/ssj-vegeta.png',
-            //'assist-1' => 'A',
-            //'assist-2_name' => 'SSJ Trunks',
-            //'assist-2_img' => '/storage/images/fighters/ssj-trunks.png',
-            //'assist-2' => 'A',
+        Note::factory()->count(24)->create();
+        
+        foreach(Note::all() as $note){
+            $fighters = Fighter::inRandomOrder()->take(rand(1,43))->pluck('id');
+            $note->fighters()->sync($fighters);
+        }
+        
+        //$fighters = Fighter::all();
+        //Note::all()->each(function ($note) use ($fighters){
+        //    $note->fighters()->attach(
+        //        $fighters->random(rand(1,43))->pluck('id')->toArray()
+        //    );
+        //});
 
-            //-- Détails --//
-            'damage' => 2620,
-            'ki_start' => 0,
-            'ki_end' => 0.5,
-            'difficulty' => 'easy',
-            //placeholder https://www.youtube.com/embed/
-            'youtube_url' => 'https://www.youtube.com/embed/IK68AZ87mRU',
-
-            //-- User --//
-            'user_id' => 1,
-        ]);
+        //Note::create([
+        //    //-- Main --//
+        //    'name' => 'My first Combo Note',
+        //    // ! add it later -->  :   'notation' => '{ "array": [ "2xL", "2xM", "2xH"] }' ,
+        //    'assistOne' => 'A',
+        //    'assistTwo' => 'B',
+        //    //-- Fighters --//
+        //    
+        //    //-- Détails --//
+        //    'damage' => 2620,
+        //    'ki_start' => 0,
+        //    'ki_end' => 0.5,
+        //    'difficulty' => 'easy',
+        //    //placeholder https://www.youtube.com/embed/
+        //    'youtube_url' => 'https://www.youtube.com/embed/IK68AZ87mRU',
+        //    //-- User --//
+        //    'user_id' => 1,
+        //]);
     }
 }

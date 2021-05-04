@@ -1,6 +1,7 @@
 'use strict';
-var grid = document.querySelector('.grid');
+var grid = document.querySelector('.grid' + '.--notes');
 var msnry = new Masonry( grid, {
+  percentPosition: true,
   itemSelector: '.grid-item',
   gutter: 20,
 });

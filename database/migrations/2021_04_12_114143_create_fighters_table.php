@@ -17,7 +17,7 @@ class CreateFightersTable extends Migration
             $table->id();
             $table->string('name', 45);
             $table->string('image_path');
-            $table->enum('assist', ['A', 'B', 'C']);
+            //$table->enum('assist', ['A', 'B', 'C']);
         });
     }
 
